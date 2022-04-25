@@ -8,7 +8,7 @@ export default function Login(){
                     <Logo1 src="/assets/cta-logo-one.svg" alt=""/>
                     <SignUp>GET ALL THERE</SignUp>
                     <Description>
-                    Denique Antiochensis ordinis vertices sub uno elogio iussit occidi ideo efferatus, quod ei celebrari vilitatem intempestivam urgenti, cum inpenderet inopia, gravius rationabili responderunt; et perissent ad unum ni comes orientis tunc Honoratus fixa constantia restitisset.
+                        Denique Antiochensis ordinis vertices sub uno elogio iussit occidi ideo efferatus, quod ei celebrari vilitatem intempestivam urgenti, cum inpenderet inopia, gravius rationabili responderunt; et perissent ad unum ni comes orientis tunc Honoratus fixa constantia restitisset.
                     </Description>
                     <Logo2 src="/assets/cta-logo-two.png" alt=""/>
                 </BlockImage>
@@ -25,7 +25,7 @@ const Container = styled.section`
     justify-content: center;
     align-items: center;
     width: 100vw;
-    heigth: 100vh;
+    height: 100vh;
 `
 
 const Content = styled.div`
@@ -63,7 +63,7 @@ const BlockImage= styled.div`
 const Logo1= styled.img`
     margin-bottom: 12px;
     max-width: 600px;
-    min-heigth: 1px;
+    min-height: 1px;
     display: block;
     width: 100%;
 `
@@ -75,7 +75,7 @@ const SignUp= styled.a`
     background-color: #0063e5;
     margin-bottom: 12px;
     width: 100%;
-    letter-spancing; 1.5px;
+    letter-spacing: 1.5px;
     font-size: 18px;
     padding: 16px 0;
     border-radius: 4px;
@@ -98,7 +98,7 @@ const Description = styled.h2`
 const Logo2= styled.img`
     margin-bottom: 12px;
     max-width: 600px;
-    min-heigth: 10px;
+    min-height: 10px;
     display: block;
     width: 100%;
 `

@@ -1,6 +1,16 @@
 import styled from "styled-components";
+import { auth, provider } from "../Firebase";
 
 export default function Header(props){
+
+    const handleAuth = () => {
+        auth.signInWithPopup(provider).then((result) => {
+            console.log(result)
+        }).catch((error) => {
+            alert(error.message)
+        })
+    }
+
     return (
         <Nav>
             <Logo>
@@ -9,9 +19,42 @@ export default function Header(props){
             <NavMenu>
                 <a href="/home">
                     <img src="/assets/home-icon.svg" alt="Home"/>
+                    <span>HOME</span>
                 </a>
-                <span>Home</span>
+                
+
+                <a href="/search">
+                    <img src="/assets/search-icon.svg" alt="search"/>
+                    <span>SEARCH</span>
+                </a>
+                
+
+                <a href="/Watchlist">
+                    <img src="/assets/watchlist-icon.svg" alt="Watchlist"/>
+                    <span>WATCHLIST</span>
+                </a>
+                
+                
+                <a href="/Originals">
+                    <img src="/assets/original-icon.svg" alt="Originals"/>
+                    <span>ORIGINALS</span>
+                </a>
+                
+                
+                <a href="/Movies">
+                    <img src="/assets/movie-icon.svg" alt="Movies"/>
+                    <span>MOVIES</span>
+                </a>
+                
+                
+                <a href="/Series">
+                    <img src="/assets/series-icon.svg" alt="Series"/>
+                    <span>SERIES</span>
+                </a>
+                
             </NavMenu>
+
+            <Login onClick={handleAuth}>Login</Login>
         </Nav>
     )
 }
@@ -55,7 +98,6 @@ const NavMenu = styled.div`
         display: flex;
         align-items: center;
         padding: 0 12px;
-    }
 
     img {
         height: 20px;
@@ -69,26 +111,53 @@ const NavMenu = styled.div`
         font-size: 13px;
         letter-spacing: 1.42px;
         line-height: 1.08;
-        padding: 2px 0px;
-        white-spacing: nowrap;
+        padding: 2px 5px;
+        white-space: nowrap;
         position: relative;
+
+        &:before {
+            content: "";
+            background-color: rgb(249, 249, 249);
+            bottom: -6px;
+            height: 2px;
+            left: 0px;
+            opacity: 0;
+            position: absolute;
+            right: 0px;
+            border-radius: 0px 0px 4px 4px;
+            transform-origin: left center;
+            transform: scaleX(0);
+            transition: all 250ms;
+            visibility: hidden;
+            width: auto;
+        }
     }
 
-    &:before {
-        content: "";
-        background-color: rgb(249, 249, 249);
-        bottom: -6px;
-        height: 2px;
-        opacity: 0;
-        position: absolute;
-        right: 0px;
-        boder-radius: 0px 0px 4px 4px;
-        transform-orgin: left center;
-        transform: scaleX(0);
-        transition: all 250ms cubic-bezier(0.25, 0.46, 0.45)
+    &:hover {
+        span:before {
+            transform: scaleX(1);
+            visibility: visible;
+            opacity: 1 !important;
+        }
     }
-
+}
     // @media (max-width: 768px){
     //     display: none;
     // }
+`
+
+const Login = styled.a`
+    background-color: rgba(0,0,0,0.6);
+    padding: 8px 16px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: 1px solid #f9F9F9;
+    border-radius: 4px;
+    transition: all 0.2s ease 0s;
+
+    &:hover{
+        background-color: #f9F9F9;
+        color: #000;
+        border-color: transparent;
+    }
 `
